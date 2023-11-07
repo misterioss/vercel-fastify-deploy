@@ -6,6 +6,12 @@ import fastify from 'fastify'
 
     server.get('/ping', () => 'pong 🏓')
 
+    server.get('/ping2', () => {
+        console.log('test simple route')
+
+        return server.printRoutes()
+    })
+
     server.get('/', () => {
         console.log('test simple route')
 
