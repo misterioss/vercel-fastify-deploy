@@ -8,6 +8,8 @@ import fastify from 'fastify'
 
     server.get('/', () => {
         console.log('test simple route')
+
+        return server.printRoutes()
     })
 
     await server.ready()
