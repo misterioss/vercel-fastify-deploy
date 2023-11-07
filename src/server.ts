@@ -1,27 +1,34 @@
 import fastify from 'fastify'
 
-console.log('ENV TEST:')
-console.log(process.env.ENV_VAR_TEST)
-console.log('-----------------')
-console.log('Start server')
-const server = fastify()
+(async () => {
 
-server.get('/ping', () => 'pong 🏓')
+    console.log('ENV TEST:')
+    console.log(process.env.ENV_VAR_TEST)
+    console.log('-----------------')
+    console.log('Start server')
+    const server = fastify()
 
-server.get('/ping2', () => {
-    console.log('test simple route')
+    server.get('/ping', () => 'pong 🏓')
 
-    return server.printRoutes()
-})
+    server.get('/ping2', () => {
+        console.log('test simple route')
 
-server.get('/', () => {
-    console.log('test simple route')
+        return server.printRoutes()
+    })
 
-    return server.printRoutes()
-})
+    server.get('/ping3', () => {
+        return process.env.ENV_VAR_TEST
+    })
 
-await server.ready()
-console.log(server.printRoutes())
-await server.listen({port: 3000})
+    server.get('/', () => {
+        console.log('test simple route')
 
-console.log('Server is listening')
+        return server.printRoutes()
+    })
+
+    await server.ready()
+    console.log(server.printRoutes())
+    await server.listen({port: 3000})
+
+    console.log('Server is listening')
+})()
