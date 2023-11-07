@@ -1,6 +1,6 @@
 import fastify from 'fastify'
 
-(async () => {
+// (async () => {
     console.log('Start server')
     const server = fastify()
 
@@ -23,4 +23,4 @@ import fastify from 'fastify'
     await server.listen({port: 3000})
 
     console.log('Server is listening')
-})()
+// })()
