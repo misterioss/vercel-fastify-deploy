@@ -1,0 +1,16 @@
+{
+  "name": "vercel-fastify-deploy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "repository": "git@github.com:misterioss/vercel-fastify-deploy.git",
+  "author": "serhii_s <serhii.sakhniuk@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^4.24.3"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
