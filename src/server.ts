@@ -1,4 +1,5 @@
 import fastify from 'fastify'
+import {getHello} from "./lib/hello.js";
 
 (async () => {
 
@@ -18,6 +19,10 @@ import fastify from 'fastify'
 
     server.get('/ping3', () => {
         return process.env.ENV_VAR_TEST
+    })
+
+    server.get('/ping4', () => {
+        return getHello()
     })
 
     server.get('/', () => {
